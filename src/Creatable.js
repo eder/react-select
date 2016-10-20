@@ -240,15 +240,16 @@ function newOptionCreator ({ label, labelKey, valueKey }) {
 };
 
 function promptTextCreator (label) {
-	return `Create option "${label}"`;
+	return `Criar um novo item "${label}"`;
 }
 
 function shouldKeyDownEventCreateNewOption ({ keyCode }) {
 	switch (keyCode) {
-		case 9:   // TAB
+		case 9:    // TAB
 		case 13:  // ENTER
-		case 188: // COMMA
-			return true;
+    case 188: // COMMA
+    case 39: // right
+	  return true;
 	}
 
 	return false;
