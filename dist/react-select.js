@@ -575,7 +575,7 @@ function newOptionCreator(_ref5) {
 };
 
 function promptTextCreator(label) {
-	return 'Create option "' + label + '"';
+	return 'Criar um novo item "' + label + '"';
 }
 
 function shouldKeyDownEventCreateNewOption(_ref6) {
@@ -584,8 +584,9 @@ function shouldKeyDownEventCreateNewOption(_ref6) {
 	switch (keyCode) {
 		case 9: // TAB
 		case 13: // ENTER
-		case 188:
-			// COMMA
+		case 188: // COMMA
+		case 39:
+			// right
 			return true;
 	}
 
@@ -1257,6 +1258,7 @@ var Select = _react2['default'].createClass({
 				this.selectFocusedOption();
 				break;
 			case 39:
+				// right
 				if (!this.state.isOpen) return;
 				event.stopPropagation();
 				this.selectFocusedOption();
